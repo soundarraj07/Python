@@ -1,0 +1,27 @@
+arr=[413,317,332,405,512,96,2]
+gap=len(arr)//2
+while(gap>0):
+    print(gap)
+    i=0
+    j=gap
+    while(j<len(arr)):
+        p=-1
+        if(arr[i]>arr[j]):
+            temp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+            p=i-gap
+        k=i
+        while(p>=0):
+            if(arr[p]>arr[k]):
+                temp=arr[p]
+                arr[p]=arr[k]
+                arr[k]=temp
+            else:
+                break
+            p-=1
+            k-=1
+        i+=1
+        j+=1
+    gap=gap//2
+print(arr)
